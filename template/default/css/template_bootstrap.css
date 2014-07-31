@@ -260,8 +260,8 @@ th {
 }
 @font-face {
     font-family: 'Glyphicons Halflings';
-    src: url('/websites/alpharelaxation.fr/partners/template/default/fonts/glyphicons-halflings-regular.eot');
-    src: url('/websites/alpharelaxation.fr/partners/template/default/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/websites/alpharelaxation.fr/partners/template/default/fonts/glyphicons-halflings-regular.woff') format('woff'), url('/websites/alpharelaxation.fr/partners/template/default/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('/websites/alpharelaxation.fr/partners/template/default/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+    src: url('/github/noname/template/default/fonts/glyphicons-halflings-regular.eot');
+    src: url('/github/noname/template/default/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/github/noname/template/default/fonts/glyphicons-halflings-regular.woff') format('woff'), url('/github/noname/template/default/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('/github/noname/template/default/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
     position: relative;
