@@ -13,7 +13,7 @@
     <div id="navbar-main" class="navbar-collapse collapse" style="height: 1px;">
 
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="<?=PATH?>">Connexion</a></li>
+            <li><a href="<?=PATH?>">Login</a></li>
         </ul>
 
     </div>

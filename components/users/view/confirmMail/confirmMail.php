@@ -2,7 +2,7 @@
     <div class="page-header">
         <div class="row">
             <div class="col-lg-12">
-                <h1 id="buttons">Vérification de l'E-mail</h1>
+                <h1 id="buttons">Mail verification</h1>
             </div>
         </div>
     </div>
@@ -11,7 +11,7 @@
         <div class="confirm-info" class="col-lg-12">
 
             <div class="bs-component">
-                <p>Veuillez vous connecter pour continuer</p>
+                <p>Please, login for continue.</p>
             </div>
 
         </div>

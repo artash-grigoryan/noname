@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="page-header">
-                <h1 id="forms">Bienvenue dans l'espace partenaires Psio</h1>
+                <h1 id="forms">Welcome</h1>
             </div>
         </div>
     </div>
@@ -14,17 +14,17 @@
             <div class="well bs-component">
                 <form id="login_form" class="form-horizontal" action="<?=BASE_PATH?>users/forgotPassword/" method="post">
                     <fieldset>
-                        <legend>Mot de passe oublié</legend>
+                        <legend>Forgot password</legend>
                             <div class="form-group">
-                                <label for="inputEmail" class="col-lg-2 control-label">Email*</label>
+                                <label for="inputEmail" class="col-lg-2 control-label">Mail*</label>
                                 <div class="col-lg-10">
                                     <input class="form-control mandatory" id="inputEmail" placeholder="Email" type="text" name='mail'>
                                 </div>
                             </div>
                         <div class="form-group">
                             <div class="col-lg-10 col-lg-offset-2">
-                                <a href="<?=PATH?>" class="btn btn-default cancel">Annuler</a>
-                                <button type="submit" class="btn btn-primary">Envoyer</button>
+                                <a href="<?=PATH?>" class="btn btn-default cancel">Cancel</a>
+                                <button type="submit" class="btn btn-primary">Send</button>
                             </div>
                         </div>
                     </fieldset>
@@ -33,10 +33,9 @@
         </div>
 
         <div id="login_info" class="col-lg-4 col-lg-offset-1">
-            <p>Veuillez entrer votre E-mail de connexion</p>
+            <p>Please, enter you mail</p>
             <p>
-                Si vous ne vous souvenez plus de votre E-mail, laissez nous un message via <a href="<?=PORT.DOM_NAME?>/contact/">notre page de contact</a>,<br />
-                Nous vous répondrons dans les meilleurs delais.
+                If you don't remember your E-mail, send message via <a href="<?=PORT.DOM_NAME?>/contact/">our contact page</a>,<br />
             </p>
         </div>
     </div>

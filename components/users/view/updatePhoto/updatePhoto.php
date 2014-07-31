@@ -3,7 +3,7 @@
     <div class="page-header">
         <div class="row">
             <div class="col-lg-12">
-                <h1>Modifier ma photo de profil</h1>
+                <h1>Update profile picture</h1>
             </div>
         </div>
     </div>
@@ -11,7 +11,7 @@
     <div class="col-lg-12">
 
         <div id="picture-upload" class="well bs-component">
-            <h2>Télécharger une photo</h2>
+            <h2>Upload picture</h2>
             <form class="form-horizontal" method="POST" action="<?=BASE_PATH?>users/updatePhoto/?action_file=upload" enctype="multipart/form-data" >
                 <fieldset>
                     <div class="form-group">
@@ -23,7 +23,7 @@
 
                     <div class="form-group">
                         <div class="col-lg-10 col-lg-offset-2">
-                            <button type="submit" class="btn btn-primary">Envoyer</button>
+                            <button type="submit" class="btn btn-primary">Send</button>
                         </div>
                     </div>
                 </fieldset>
@@ -35,16 +35,16 @@
     <div class="col-lg-12">
 
         <div id="picture-camera" class="well bs-component">
-            <h2>Prendre une photo</h2>
+            <h2>Take a picture</h2>
 
             <div class="display_block">
                 <video id="video"></video>
                 <canvas id="canvas" style="display:none"></canvas>
             </div>
             <div class="block_button">
-                <button id="startbutton" class="btn btn-primary button button_picture" >Prendre une photo</button>
-                <button id="reloadbutton" class="btn btn-primary button button_picture" style="display:none">Réessayer</button>
-                <button id="savebutton" class="btn btn-primary button button_picture" style="display:none">Sauvegarder la photo</button>
+                <button id="startbutton" class="btn btn-primary button button_picture" >Take a picture</button>
+                <button id="reloadbutton" class="btn btn-primary button button_picture" style="display:none">Retry</button>
+                <button id="savebutton" class="btn btn-primary button button_picture" style="display:none">Save picture</button>
             </div>
         </div>
     </div>
@@ -53,11 +53,11 @@
         <div class="col-lg-12">
 
             <div id="picture-delete" class="bs-component">
-                <h2>Supprimer la photo existante</h2>
+                <h2>Delete existant picture</h2>
                 <div class="form-horizontal">
                     <div class="form-group">
                         <img src="<?=WEBSITE_PATH.'template/default/images/profile/'.Utils::hashStr(User::getIdentity()->id).'.png'?>" alt="photo de profil" />
-                        <a href="<?=BASE_PATH?>users/updatePhoto/?action_file=delete" class="btn btn-primary">Supprimer</a>
+                        <a href="<?=BASE_PATH?>users/updatePhoto/?action_file=delete" class="btn btn-primary">Delete</a>
                     </div>
                 </div>
             </div>
