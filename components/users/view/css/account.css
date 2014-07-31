@@ -1,0 +1,51 @@
+
+
+#account-page{}
+#account-page h2{
+    color: inherit;
+}
+#account-page #account-info{
+    margin: auto;
+    max-width: 920px;
+}
+#account-page #account-info .jumbotron {
+    min-height: 300px;
+    position: relative;
+}
+#account-page #account-info .jumbotron #update_info_link{
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+#account-page #account-info .jumbotron:hover #update_info_link{
+    display: block;
+}
+#account-page #account-info .profile_picture{
+    float: left;
+    height: 200px;
+    margin-right: 30px;
+    overflow: hidden;
+    position: relative;
+    text-align: right;
+    width: 250px;
+}
+#account-page #account-info .profile_picture img{
+    max-width: 250px;
+}
+#account-page #account-info .profile_picture #update_picture_link{
+    display: none;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+#account-page #account-info .profile_picture:hover #update_picture_link{
+    display: block;
+}
+#account-page #account-info h3{}
+#account-page #account-info .cmp_info{}
+#account-page #account-info .cmp_info p{
+}
+#account-page #account-info .cmp_info.mail{}
+#account-page #account-info .cmp_info.phone{}
+#account-page #account-info .cmp_info.address{}

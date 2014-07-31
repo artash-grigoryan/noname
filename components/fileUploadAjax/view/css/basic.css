@@ -1,0 +1,32 @@
+@import '/admin/components/fileUploadAjax/css/bootstrap.dev.css';
+@import '/admin/components/fileUploadAjax/css/jquery.fileupload-ui.css';
+
+/* 
+    Document   : basic
+    Created on : 23 sept. 2013, 04:14:51
+    Author     : nicolascramail
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#files {
+    /*bottom: 0;*/
+    left: 0;
+    position: absolute;
+    /*text-align: center;*/
+    /*width: 100%;*/
+}
+/*
+.progress {
+    left: 40%;
+    position: absolute;
+    bottom: 0;
+    width: 20%;
+    z-index: 3;
+}
+*/
+canvas{
+    
+    height: 150px;
+    width: 400px;
+}

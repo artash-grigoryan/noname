@@ -1,0 +1,35 @@
+
+#sessions-info{
+    margin: auto;
+    max-width: 920px;
+}
+#sessions-info h2{
+    color: inherit;
+}
+#sessions_actives {}
+#sessions_actives .session_block{}
+#sessions_actives .session_block span{
+    font-weight: bold;
+    width: 120px;
+    display: inline-block;
+}
+#sessions_actives .last_log{}
+#sessions_actives .last_log span{}
+#sessions_actives .panel {
+    position: relative;
+}
+#sessions_actives .delete_session{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+@media (max-width: 480px) {
+    #sessions_actives .delete_session{
+        position: relative;
+        right: auto;
+        top: auto;
+    }
+    #sessions_actives .session_block span {
+        display: block;
+    }
+}

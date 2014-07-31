@@ -1,0 +1,189 @@
+@media (min-width : 1200px) {
+    
+    #header {
+        margin-left: 0 !important;
+        width: 20% !important;
+        overflow-y: hidden !important;
+    }
+    #main {
+        margin-left: 20% !important;
+        width: 80% !important;
+    }
+    #footer {
+        margin-left: 20% !important;
+        width: 80% !important;
+    }
+}    
+@media (max-width : 1200px) {
+    
+    #header {
+        margin-left: -240px;
+        width: 240px;
+        overflow: auto;
+    }
+    #sidePanelToggle {
+        display: block !important;
+    }
+    #header #menu_left {
+        height: 900px;
+        overflow: auto;
+    }
+    #header #menu_left .bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        -moz-box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.15);
+        -webkit-box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.15);
+        -o-box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.15);
+        box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.15);
+        margin-top: 1em;
+        padding-top: 2em;
+        position: relative;
+    }
+    #main {
+        margin-left: 0;
+        width: 100%;
+    }
+    #footer {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+}
+@media (max-width : 800px) {
+    
+    #home-page .container .intro {
+        width: 100% !important;
+    }
+    #home-page .container .content {
+        width: 100% !important;
+    }
+    #payments-page #payments {
+        width: 100% !important;
+    }
+    body #main, #main input, #main textarea, #main select {
+        font-size: 14pt !important;
+    }
+    #login_block .content {
+        float: none !important;
+        text-align: center !important;
+        width: auto !important;
+    }
+    #login_block .content p {
+        margin-bottom: 1em !important;
+    }
+    .locked_login {
+        float: none !important;
+        margin: 40px auto !important;
+    }
+}
+@media (max-width : 560px) {
+    
+    .loginbox {
+        padding: 2% !important;
+        width: 96% !important;
+    }
+    .locked_login {
+        background: none repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+        border: medium none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        display: block;
+        float: none !important;
+        margin: 0 !important;
+        padding-top: 0 !important;
+        width: auto;
+    }
+    .locked_login form input.text {
+        display: block !important;
+        margin: 0 !important;
+        padding: 10px 2% !important;
+        width: 96% !important;
+    }
+    .locked_login form label {
+        line-height: 1.5em !important;
+    }
+    .locked_login #forgot_pwd {
+        left: auto !important;
+        right: 20px !important;
+        line-height: 1.5em !important;
+        top: 10px !important;
+        width: 100px !important;
+    }
+    .locked_login form .formend {
+        background: none repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+        border-top: medium none !important;
+        margin-bottom: 0 !important;
+        margin-top: 0 !important;
+        padding-bottom: 10px !important;
+        padding-top: 10px !important;
+    }
+    .loginbox .registration_link {
+        width: auto !important;
+    }
+    .loginbox #fb_login_block {
+        padding: 10px 0 !important;
+        width: 100% !important;
+    }
+    .loginbox form {
+        width: 100% !important;
+    }
+    body #main, #main input, #main textarea, #main select {
+        font-size: 13pt !important;
+    }
+    #account-page #account-info {
+        width: 100% !important;
+    }
+    #account-page #account-info .account_block .update_info, #account-page #account-info .account_block .update_photo {
+        display: inline !important;
+    }
+    #sessions_actives ul li div.session_block span {
+        float: none !important;
+        width: 96% !important;
+    }
+    #account-page #account-info .account_block .value {
+        width: 90% !important;
+    }
+}
+
+@media (max-width : 320px) {
+    
+    body #main, #main input, #main textarea, #main select {
+        font-size: 12pt !important;
+    }
+}
+
+/* Tablet, both */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+
+}
+
+/* Tablet, portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+
+    
+}
+
+/* Tablet, landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+
+ 
+}
+
+/* Smartphone, both */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
+    
+}
+
+/* Smartphone, portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) {
+    
+        
+}
+
+/* Smartphone, portrait iphone 4 */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) {
+    
+    
+}

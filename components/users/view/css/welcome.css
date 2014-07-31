@@ -1,0 +1,16 @@
+
+.welcome {
+    position: absolute;
+    right: 25px;
+    top: 27px;
+}
+.welcome p{
+    margin: 0;
+}
+.welcome a{
+    color: #3B5998;
+    float: right;
+    font-size: 12px;
+    font-style: italic;
+    line-height: 12px;
+}

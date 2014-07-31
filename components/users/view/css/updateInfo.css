@@ -1,0 +1,9 @@
+#updateinfo-page {}
+#updateinfo-page .bs-component {
+    margin: auto;
+    max-width: 920px;
+}
+#updateinfo-page form{
+    max-width: 920px;
+    margin: auto;
+}

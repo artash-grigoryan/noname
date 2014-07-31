@@ -1,0 +1,10 @@
+@import '/websites/alpharelaxation.fr/partners/components/fileUploadAjax/view/css/style.css';
+@import '/websites/alpharelaxation.fr/partners/components/fileUploadAjax/css/bootstrap.dev.css';
+@import '/websites/alpharelaxation.fr/partners/components/fileUploadAjax/css/style.css';
+@import '/websites/alpharelaxation.fr/partners/components/fileUploadAjax/css/bootstrap-responsive.min.css';
+@import '/websites/alpharelaxation.fr/partners/components/fileUploadAjax/css/bootstrap-image-gallery.min.css';
+@import '/websites/alpharelaxation.fr/partners/components/fileUploadAjax/css/jquery.fileupload-ui.css';
+
+body {
+    /*margin: 0;*/
+}

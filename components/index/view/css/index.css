@@ -1,0 +1,5 @@
+#index-page {}
+#index-page .bs-component{
+    max-width: 920px;
+    margin: auto;
+}

@@ -1,0 +1,40 @@
+#partners-page {}
+#partners-page .bs-component{
+    margin: auto;
+    max-width: 920px;
+}
+#partners-page .partners_list{
+    list-style-position: inside;
+}
+#partners-page .partners_list ul{
+    border-left: 1px solid #ddd;
+}
+#partners-page .partners_list li{
+    margin: 10px;
+}
+#partners-page .partners_list li.new_user_link{}
+#partners-page .partners_list li.new_user_link a{
+    opacity: 0.3;
+}
+#partners-page .partners_list li.new_user_link a:hover {
+    opacity: 1;
+}
+#partners-page .partners_list > li{}
+#partners-page .partners_list > li a{
+
+}
+#partners-page .partners_list > li > ul{}
+#partners-page .partners_list > li > ul > li{}
+#partners-page .partners_list > li > ul > li a{
+
+}
+#partners-page .partners_list > li > ul > li > ul{}
+#partners-page .partners_list > li > ul > li > ul > li{}
+#partners-page .partners_list > li > ul > li > ul > li a{
+
+}
+#partners-page .partners_list > li > ul > li > ul > li > ul{}
+#partners-page .partners_list > li > ul > li > ul > li > ul >li{}
+#partners-page .partners_list > li > ul > li > ul > li > ul >li a{
+
+}

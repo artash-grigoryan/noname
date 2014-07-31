@@ -1,0 +1,136 @@
+.loginbox {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #B0BEC6;
+    border-radius: 5px;
+    -moz-box-shadow: 0px 1px 0px 0px #FFFFFF;
+    -webkit-box-shadow: 0px 1px 0px 0px #FFFFFF;
+    -o-box-shadow: 0px 1px 0px 0px #FFFFFF;
+    box-shadow: 0px 1px 0px 0px #FFFFFF;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=#FFFFFF, Direction=180, Strength=0);
+    display: block;
+    float: right;
+    margin: 20px;
+    padding-top: 20px;
+    width: 400px;
+}
+.loginbox #fb_login_block {
+    background: none repeat scroll 0 0 #ECEFF1;
+    border: 1px solid #B0BEC6;
+    border-radius: 4px;
+    margin: auto;
+    padding: 10px 5%;
+    position: relative;
+    width: 80%;
+}
+.loginbox #fb_login_block .logo_title{
+    height: 15px;
+}
+.loginbox #fb_login_block #fb_user_block{
+    display: block;
+    height: 57px;
+    margin: 10px auto auto;
+    position: relative;
+    width: 250px;
+}
+.loginbox #fb_login_block #fb_user_block img.user_picture{
+    border: 1px solid #DDDDDD;
+    float: right;
+    margin-left: 10px;
+}
+.loginbox #fb_login_block #fb_user_block #sync_action{
+    display: inline-block;
+    font-family: Sensation;
+    font-size: 20px;
+    height: 20px;
+    line-height: 20px;
+    margin-top: 15px;
+    max-width: 225px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.loginbox #fb_login_block #login_button{
+    margin-left: 20px;
+}
+.loginbox #fb_login_block #login_button img{
+    width: 230px;
+}
+.loginbox #fb_login_block #logout_button{
+    bottom: 0;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    font-style: italic;
+    left: 60px;
+    position: absolute;
+}
+.loginbox .message {
+    margin: auto auto 10px;
+    width: 70%;
+}
+.loginbox .message.info {
+    background: url("/template/default/images/info.gif") no-repeat scroll 12px 12px #ECF9FF;
+    border: 1px solid #BBDBE0;
+    color: #0888C3;
+}
+.loginbox .message {
+    border-radius: 3px 3px 3px 3px;
+    font-weight: bold;
+    overflow: hidden;
+    padding: 10px 10%;
+}
+.loginbox form p {
+    margin: 10px 20px;
+}
+.loginbox form p.input {
+    margin: auto;
+    padding: 0 30px 20px 20px;
+}
+	
+.loginbox form {
+    margin: 20px auto auto;
+}
+.loginbox h2{
+    margin-bottom: 10px;
+    text-align: center;
+}
+.loginbox form .formend {
+    background: none repeat scroll 0 0 #F1F1F1;
+    border-top: 1px solid #BBBBBB;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    height: 30px;
+
+    -moz-box-shadow: inset 0px 1px 0px 0px #FFFFFF;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #FFFFFF;
+    -o-box-shadow: inset 0px 1px 0px 0px #FFFFFF;
+    box-shadow: inset 0px 1px 0px 0px #FFFFFF;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=#FFFFFF, Direction=180, Strength=0);
+
+    -webkit-border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.loginbox form .formend .options_form{
+    display: inline;
+}
+.loginbox form .formend .options_form label{
+    display: inline;
+}
+.loginbox form .formend .options_form input{
+    margin: 0;
+    display: inline;
+}
+	
+.loginbox form input.text {
+    margin: 5px 20px;
+    width: 300px;
+}
+	
+.loginbox form input.submit {
+    margin-right: 10px;
+}

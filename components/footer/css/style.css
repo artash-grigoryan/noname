@@ -1,0 +1,28 @@
+/*********************************************************************************/
+/* Footer                                                                        */
+/*********************************************************************************/
+	
+footer
+{
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.05) inset, 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.024) inset;
+    margin-top: 2em;
+    padding: 3em 0 4em;
+    text-align: center;
+}
+
+footer .copyright
+{
+    line-height: 1.25em;
+}
+
+footer .copyright p
+{
+    margin: 0 0 1em 0;
+}
+
+footer ul {}
+footer ul li{
+    display: inline-block;
+    margin: 10px;
+}
+footer ul li a{}

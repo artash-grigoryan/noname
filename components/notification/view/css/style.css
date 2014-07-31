@@ -1,0 +1,9 @@
+.notification {
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .alert {
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,16 @@
+#search_forms {}
+#search_forms ul{
+    min-width: 320px;
+    padding: 5px 20px;
+}
+#search_forms ul form{}
+#search_forms ul form legend{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+#search_forms ul form .form-group{}
+#search_forms ul form .form-group label{
+    font-size: 13px;
+    font-weight: 400;
+}
+#search_forms ul form .form-group .input-group{}

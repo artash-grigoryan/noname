@@ -1,0 +1,30 @@
+#login {}
+#login_info {}
+#login_info p,
+#registration_info p {
+    margin-bottom: 40px;
+}
+
+#login_form .registration_link {
+    position: absolute;
+    right: 40px;
+    top: 23px;
+}
+#login_form .forgot_pwd {
+    font-size: 0.8em;
+    font-style: italic;
+}
+#registration {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #login_form .registration_link {
+        display: block;
+        padding-right: 10px;
+        position: relative;
+        right: auto;
+        text-align: right;
+        top: auto;
+    }
+}

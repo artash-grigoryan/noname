@@ -1,0 +1,44 @@
+#camera_snapshot h2 {
+    color: inherit;
+}
+
+#picture-camera {
+    margin: 20px auto;
+    max-width: 920px;
+}
+#picture-camera {}
+#picture-camera .display_block {
+    text-align: center;
+}
+#picture-camera .block_button {
+    text-align: center;
+}
+#picture-camera .block_button #savebutton.active{
+    background-image: url("/websites/alpharelaxation.fr/partners/template/default/images/loader.gif");
+    background-position: right top;
+    opacity: 0.6;
+}
+#picture-upload {
+    margin: auto;
+    max-width: 920px;
+}
+#picture-upload form{}
+#picture-upload form input{
+    border: medium none;
+    box-shadow: none;
+    padding: 0;
+}
+#picture-delete {
+    margin: auto;
+    max-width: 920px;
+}
+#picture-delete .form-group {
+    text-align: center;
+}
+#picture-delete .form-group img{
+    display: block;
+    margin: auto;
+}
+#picture-delete .form-group a{
+    margin-top: 20px;
+}
