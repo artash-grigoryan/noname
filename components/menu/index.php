@@ -1,7 +1,7 @@
 <div class="container">
     <div id="logo" class="navbar-header">
         <a class="navbar-brand" href="<?=PATH?>">
-            Psio
+            Noname
         </a>
         <button data-target="#navbar-main" data-toggle="collapse" type="button" class="navbar-toggle collapsed">
             <span class="icon-bar"></span>
