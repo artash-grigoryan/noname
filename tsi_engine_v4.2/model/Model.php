@@ -53,11 +53,11 @@ class Model extends Utils {
         }
     }
     
-    public function selectAll($_table, array $_where = array(), array $_orderBy = array(), array $_limit = array())
+    public function selectAll($_table, array $_where = array(), array $_orderBy = array())
     {
         try {
             $this->_db->setTable($_table);
-            return $this->_db->selectAll($_where, $_orderBy, $_limit);
+            return $this->_db->selectAll($_where, $_orderBy);
         }
         catch (SException $e) {
             throw $e;

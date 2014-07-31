@@ -17,7 +17,7 @@ class Auth {
     private $_params;
     private $_User;
     
-    function  __construct( $_params = array('facebook' => false, 'e-mail' => false) ){
+    function  __construct( $_params = array('facebook' => true, 'e-mail' => true) ){
         
         $this->_params = $_params;
     }
@@ -82,7 +82,7 @@ class Auth {
             {
                 return true;
             }
-
+            
             if(!empty($this->_params['facebook']))
             {
                 /*
@@ -95,51 +95,13 @@ class Auth {
                         return true;
                     }
                 }
-                else
+                else 
                 {
                     if($this->facebookAuth(false))
                     {
                         return true;
                     }
                 }
-            }
-        }
-        else
-        {
-            //active user
-            return true;
-        }
-        //case of auth fail
-        return false;
-    }
-
-    function checkSerialUser()
-    {
-        if($this->authException())
-        {
-            /*
-             * exception case
-             */
-            $option = Controller::getOption();
-            $action = Controller::getAction();
-            Controller::initComponent($option, $action);
-            Controller::loadComponent($option, $action);
-            exit();
-        }
-
-        if ( !User::hasIdentity() )
-        {
-
-            /*
-             * CookieConnexion
-             *
-             * if there is a cookie session active
-             * we don't need to continue the end of the authentification
-             */
-
-            if($this->cookieSerialAuth())
-            {
-                return true;
             }
         }
         else
@@ -209,20 +171,6 @@ class Auth {
         //case of auth fail
         
     }
-
-    function checkSerialValidation()
-    {
-        $serialNumber = Controller::getVars ("serial", false);
-        if(!empty($serialNumber)) {
-            if($this->serialAuth($serialNumber))
-            {
-                return true;
-            }
-            else {
-                throw new SException('Serial number doesn\'t exist', 700);
-            }
-        }
-    }
     
     private function cookieAuth()
     {
@@ -247,50 +195,7 @@ class Auth {
         }
         return false;
     }
-
-    private function cookieSerialAuth()
-    {
-        $CookieManager = new CookieManager();
-        $sessionId = $CookieManager->getCookieValue('act');
-        $serialId  = $CookieManager->getCookieValue('cono');
-        if(!empty($sessionId) && !empty($serialId))
-        {
-            try {
-                //serial auth
-                $this->_User = User::getUserBySerialIdSessionId($serialId, $sessionId);
-                $this->_User->disableSerialSession($sessionId);
-                session_regenerate_id(true);
-                $this->_User->activateSerial();
-                $this->setCookieSession();
-                return true;
-            }
-            catch (SException $e) {
-
-                return false;
-            }
-        }
-        return false;
-    }
-
-    private function serialAuth($serial)
-    {
-        if(!empty($serial))
-        {
-            try {
-                //mail password auth
-                $this->_User = User::getUserSerial($serial);
-                session_regenerate_id(true);
-                $this->_User->activateSerial();
-                $this->setCookieSession();
-                return true;
-            }
-            catch (SException $e)
-            {
-                return false;
-            }
-        }
-    }
-
+    
     private function mailAuth($mail, $password, $rememberme, $token)
     {
         if(!empty($password))
@@ -398,23 +303,6 @@ class Auth {
             unset($_SESSION['user']);
         }
     }
-
-    public static function logoutBySerial()
-    {
-        if(!empty($_SESSION['user']))
-        {
-            $User = User::getIdentity();
-            $CookieManager = new CookieManager();
-            $sessionId = $CookieManager->getCookieValue('act');
-            $serialId = $CookieManager->getCookieValue('cono');
-            $User->disableSerialSession($serialId, $sessionId);
-            $User->unactivateSerial($serialId);
-            session_destroy();
-            setcookie('act', '', 0, '/', '.'.DOM_NAME);
-            setcookie('cono', '', 0, '/', '.'.DOM_NAME);
-            unset($_SESSION['user']);
-        }
-    }
     
     /*
      * @param auth necessary
@@ -428,7 +316,6 @@ class Auth {
         catch (SException $e) {
             return false;
         }
-        
     }
 
     public static function hasMailVerified() {
@@ -440,7 +327,7 @@ class Auth {
             return false;
         }
     }
-    
+
     private function setCookieSession()
     {
         $CookieManager = new CookieManager();

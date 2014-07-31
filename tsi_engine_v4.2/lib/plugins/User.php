@@ -20,7 +20,7 @@ class User{
         if(!empty($_SESSION['user'])) {
             return unserialize($_SESSION['user']);
         }
-        return false;
+        throw new SException('User doesn\'t exist', 700);
     }
     
     public static function getUser( $_userId )
@@ -40,14 +40,7 @@ class User{
         $DBUser = new DBUser();
         return new self($DBUser->getUserByMailToken($_mail, $_token));
     }
-
-    /**
-     *
-     *
-     * @param $_mail
-     * @param $_password
-     * @return User
-     */
+    
     public static function getUserByMailPwd( $_mail, $_password )
     {
         $DBUser = new DBUser();
@@ -58,11 +51,6 @@ class User{
     {
         $DBUser = new DBUser();
         return new self($DBUser->getUserByUserIdSessionId($_userId, $_sessionId));
-    }
-    public static function getUserBySerialIdSessionId( $_serialId, $_sessionId )
-    {
-        $DBUser = new DBUser();
-        return new self($DBUser->getUserBySerialIdSessionId($_serialId, $_sessionId));
     }
     
     public static function getUserByFbId( $_userFbId, $_facebookRegistration )
@@ -78,22 +66,11 @@ class User{
             return new self($DBUser->getUserActiveByFbId($_userFbId));
         }
     }
-
-    public static function getUserSerial($_serial) {
-        $DBUser = new DBUser();
-        return new self($DBUser->getUserSerial($_serial));
-    }
     
     public function disableSession( $_sessionId )
     {
         $DBUser = new DBUser();
         return $DBUser->disableSession($this->id, $_sessionId);
-    }
-
-    public function disableSerialSession( $_sessionId )
-    {
-        $DBUser = new DBUser();
-        return $DBUser->disableSerialSession($this->id, $_sessionId);
     }
     
     private function createInstance ( $user )
@@ -106,7 +83,7 @@ class User{
             $this->$key = $value;
         }
     }
-
+    
     public function insert()
     {
         $DBUser = new DBUser();
@@ -128,17 +105,6 @@ class User{
         
         $_SESSION['user'] = serialize($this);
     }
-
-    public function activateSerial()
-    {
-        $DBUser = new DBUser();
-        $DBUser->activateSerial($this->id);
-        $DBUser->createSerialSession($this->id);
-        $DBUser->cleanSession($this->id);
-        $DBUser->updateSerialLog($this->id);
-
-        $_SESSION['user'] = serialize($this);
-    }
     
     public function updateLog()
     {
@@ -150,12 +116,6 @@ class User{
     {
         $DBUser = new DBUser();
         $DBUser->unactivate($this->id);
-    }
-
-    public function unactivateSerial()
-    {
-        $DBUser = new DBUser();
-        $DBUser->unactivateSerial($this->id);
     }
     
     public function fbSync($fbid)
@@ -173,7 +133,7 @@ class User{
     {
         return $this->active;
     }
-
+    
     function setToken($token)
     {
         $DBUser = new DBUser();
@@ -192,7 +152,7 @@ class User{
         $DBUser = new DBUser();
         return $DBUser->getMailVerification($this->id);
     }
-
+    
     function setPassword( $_password )
     {
         $DBUser = new DBUser();

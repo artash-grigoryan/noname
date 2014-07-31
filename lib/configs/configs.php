@@ -1,28 +1,25 @@
 <?php
 
 define('PORT', (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? 'https://' : 'http://');
-define('DOM_NAME',     'tonsiteinternet.fr');
+define('DOM_NAME',     'localhost');
 define('SUBDOM_NAME',  '');
 
 
 //define('LANGUAGE', !empty($_GET['lang']) ? $_GET['lang'] : substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2));
 
-define('PATH',           PORT.SUBDOM_NAME.DOM_NAME.'/websites/alpharelaxation.fr/partners/');
+define('PATH',           PORT.SUBDOM_NAME.DOM_NAME.'/github/noname/');
 define('BASE_PATH',      PATH);
 define('CURRENT_PATH',   PORT.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 define('ABS_PATH',       dirname(dirname(dirname(__FILE__))).'/');
 
-define('WEBSITE_PATH',    PATH);
-define('WEBSITE_ABS_PATH',dirname(dirname(dirname(__FILE__))).'/');
-
 //way to the motor
-define("MOTOR_ABS_PATH", dirname(dirname(dirname(dirname(__FILE__)))).'/tsi_engine_v4.2/');
-define("MOTOR_PATH",     PORT.SUBDOM_NAME.DOM_NAME.'/websites/alpharelaxation.fr/tsi_engine_v4.2/');
+define("MOTOR_ABS_PATH", dirname(dirname(dirname(__FILE__))).'/tsi_engine_v4.2/');
+define("MOTOR_PATH",     PATH.'tsi_engine_v4.2/');
 
-define('SESSION_NAME', 'alpharelaxation');
+define('SESSION_NAME', 'noname');
 
-define('MAIL_FROM',    'contact@alpharelaxation.fr');
-define('MAIL_NAME',    'Service Partenaires Psio');
+define('MAIL_FROM',    'contact@domain.com');
+define('MAIL_NAME',    'Contact');
 
 define('SUPER_ADMIN', 8);
 define('ADMIN',       4);
@@ -32,7 +29,7 @@ define('UNKNOWN',     0);
 
 //define salt and new user auth
 define('NEW_USER_AUTH', CLIENT);
-define('SALT',         '24nku9Q3LkVm8G4HB3yreQru3jU99t7K9TB6Zj3y');
+define('SALT', '4815e52a7ab91460692726ba590a7a1697208607');
 
 /*
  * define options and actions exception for auth

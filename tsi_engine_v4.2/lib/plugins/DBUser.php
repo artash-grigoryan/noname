@@ -86,24 +86,6 @@ class DBUser extends Model{
                     ";
         return $this->_db->doQueryOne($query, array('sessionId' => $_sessionId, 'userId' => $_userId));
     }
-
-    public function getUserBySerialIdSessionId( $_serialId, $_sessionId )
-    {
-        $query = "SELECT
-                                    serials.*
-                        FROM
-                                    serials
-                        JOIN
-                                    sessions
-                            ON
-                                    sessions.serial_id = serials.id
-                            AND
-                                    sessions.session_id = :sessionId
-                        WHERE
-                                    serials.id = :serialId
-                    ";
-        return $this->_db->doQueryOne($query, array('sessionId' => $_sessionId, 'serialId' => $_serialId));
-    }
     
     public function getUserActiveByFbId($_userFbId)
     {
@@ -130,22 +112,11 @@ class DBUser extends Model{
                     ";
         return $this->_db->doQueryOne($query, array('userFbId' => $_userFbId));
     }
-    public function getUserSerial($_serial)
-    {
-        $query = "SELECT
-                                    *
-                        FROM
-                                    serials
-                        WHERE
-                                    serials.number = :serialNumber
-                    ";
-        return $this->_db->doQueryOne($query, array('serialNumber' => $_serial));
-    }
     
     public function activate($_userId)
     {
         $query = "UPDATE 
-                            users
+                            users 
                     SET 
                             active = 1
                     WHERE 
@@ -153,19 +124,6 @@ class DBUser extends Model{
                 ";
 
         return $this->_db->doQuery($query, array('userId' => $_userId));
-    }
-
-    public function activateSerial($_serialId)
-    {
-        $query = "UPDATE
-                            serials
-                    SET
-                            active = 1
-                    WHERE
-                            id = :serialId
-                ";
-
-        return $this->_db->doQuery($query, array('serialId' => $_serialId));
     }
     
     public function unactivate($_userId)
@@ -179,19 +137,6 @@ class DBUser extends Model{
                 ";
 
         return $this->_db->doQuery($query, array('userId' => $_userId));
-    }
-
-    public function unactivateSerial($_serialId)
-    {
-        $query = "UPDATE
-                            serials
-                    SET
-                            active = 0
-                    WHERE
-                            id = :serialId
-                ";
-
-        return $this->_db->doQuery($query, array('serialId' => $_serialId));
     }
     
     public function createSession($_userId)
@@ -211,23 +156,6 @@ class DBUser extends Model{
             echo $e->getMessage();
         }
     }
-    public function createSerialSession($_serialId)
-    {
-        try
-        {
-            $query = "INSERT
-                            INTO
-                                    sessions (serial_id, session_id, remote_addr, http_user_agent)
-                            VALUES
-                                    (:serialId, :sessionId, :remote_addr, :http_user_agent)
-                    ";
-            return $this->_db->doQuery($query, array('serialId' => $_serialId, 'sessionId' => session_id(), 'remote_addr' => $_SERVER['REMOTE_ADDR'], 'http_user_agent' => $_SERVER['HTTP_USER_AGENT']));
-        }
-        catch (ErrorException $e)
-        {
-            echo $e->getMessage();
-        }
-    }
     
     public function disableSession($_userId, $_sessionId)
     {
@@ -239,19 +167,8 @@ class DBUser extends Model{
             echo $e->getMessage();
         }
     }
-
-    public function disableSerialSession($_serialId, $_sessionId)
-    {
-        try {
-            return $this->update('sessions', array('active'=>0), array('serial_id'=>$_serialId, 'session_id'=>$_sessionId));
-        }
-        catch (Exception $e)
-        {
-            echo $e->getMessage();
-        }
-    }
     
-    public function cleanSession($_serialId)
+    public function cleanSession($_userId)
     {
         try {
             $query = "UPDATE 
@@ -259,7 +176,7 @@ class DBUser extends Model{
                         SET 
                                 active = 0 
                         WHERE 
-                                serial_id = :serialId
+                                user_id = :userId
                         AND
                                 remote_addr = :remote_addr
                         AND
@@ -268,7 +185,7 @@ class DBUser extends Model{
                                 session_id != :sessionId
                     ";
 
-            return $this->_db->doQuery($query, array('serialId' => $_serialId, 'sessionId' => session_id(), 'remote_addr' => $_SERVER['REMOTE_ADDR'], 'http_user_agent' => $_SERVER['HTTP_USER_AGENT']));
+            return $this->_db->doQuery($query, array('userId' => $_userId, 'sessionId' => session_id(), 'remote_addr' => $_SERVER['REMOTE_ADDR'], 'http_user_agent' => $_SERVER['HTTP_USER_AGENT']));
         }
         catch (Exception $e)
         {
@@ -302,19 +219,6 @@ class DBUser extends Model{
 
         return $this->_db->doQuery($query, array('userId' => $_userId));
     }
-
-    public function updateSerialLog( $_serialId )
-    {
-        $query = "UPDATE
-                            serials
-                    SET
-                            lastlog = NOW()
-                    WHERE
-                            id = :serialId
-                ";
-
-        return $this->_db->doQuery($query, array('serialId' => $_serialId));
-    }
     
     public function setToken($_userId, $_token)
     {
@@ -327,7 +231,7 @@ class DBUser extends Model{
                     ";
         return $this->_db->doQuery($query, array('userId' => $_userId, 'token' => $_token));
     }
-
+    
     public function setMailVerified($_userId)
     {
         $query = "UPDATE
@@ -351,7 +255,7 @@ class DBUser extends Model{
                     ";
         return $this->_db->doQueryColumn($query, array('userId' => $_userId));
     }
-
+    
     public function setPassword($_userId, $_password)
     {
         $query = "UPDATE

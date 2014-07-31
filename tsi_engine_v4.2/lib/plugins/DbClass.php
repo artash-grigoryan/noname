@@ -164,7 +164,7 @@ class DbClass {
             }
         }
         
-        function selectAll(array $_where = array(), array $_orderBy = array(), array $_limit = array())
+        function selectAll(array $_where = array(), array $_orderBy = array())
         {
             if(empty($this->_table)) {
                 throw new SException('Table is not defined ( use self::setTable )', 771);
@@ -182,10 +182,6 @@ class DbClass {
             if(!empty($_orderBy)) {
                 $stringOrderBy = 'ORDER BY ' . key($_orderBy) . ' ' . $_orderBy[key($_orderBy)];
             }
-            $stringLimit = '';
-            if(!empty($_limit)) {
-                $stringLimit = 'LIMIT ' . $_limit[0] . ', ' . $_limit[1];
-            }
             
             $query = "SELECT
                                 *
@@ -193,9 +189,8 @@ class DbClass {
                                 $this->_table
                         $stringWhere
                       $stringOrderBy
-                      $stringLimit
                      ";
-
+            
             try {
                 return $this->doQueryAll($query, $_where);
             }

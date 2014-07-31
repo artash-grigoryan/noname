@@ -112,7 +112,7 @@ class View {
     {
         if($this->_activeView)
         {
-            if($this->_activeTemplate)
+            if($this->_activeTemplate && !defined('TEMPLATE_EXIST'))
             {
                 $this->loadTemplate();
             }
@@ -139,6 +139,7 @@ class View {
     {
         try 
         {
+            define('TEMPLATE_EXIST', true);
             require_once($this->_template.'index.php');
         }
         catch (Exception $e)
